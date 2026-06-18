@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from app.api.v1.auth import router as auth_router
+from app.api.v1.users import router as users_router
 from app.api.v1.health import router as health_router
 from app.api.v1.requests import router as requests_router
 from app.api.v1.reviewer import router as reviewer_router
@@ -44,6 +45,7 @@ app.include_router(health_router, tags=["health"])
 app.include_router(auth_router)
 app.include_router(requests_router)
 app.include_router(reviewer_router)
+app.include_router(users_router)
 
 
 @app.get("/")
